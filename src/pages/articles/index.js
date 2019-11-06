@@ -48,24 +48,6 @@ function Articles(props) {
         padding: "10px"
       }}>
     </List>
-    // <div style={{
-    //   display: "flex",
-    //   flexWrap: "wrap"
-    // }}>
-    //   {
-    //     articles.map((item) => {
-    //       return (
-    //         <Article
-    //           key={item.id}
-    //           author={item.user.login}
-    //           title={item.title}
-    //           tags={popularTags(item.labels)}
-    //           url={item.html_url}
-    //           created={item.created_at}></Article>
-    //       )
-    //     })
-    //   }
-    // </div>
   )
 }
 

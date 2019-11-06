@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
-import { Layout, Menu, Icon } from 'antd'
+import { connect } from 'dva'
+import { Layout, Menu, Icon, Avatar } from 'antd'
 import Link from 'umi/link'
 
 function BasicLayout(props) {
   // use hooks set a new state variable
+  const { user } = props
   const [ siderCollapsed, setSiderCollapsed ] = useState(false)
+
+  console.log(user)
 
   return (
     <Layout style={{
@@ -44,7 +48,7 @@ function BasicLayout(props) {
       <Layout>
         <Layout.Header style={{
           background: '#FFF',
-          padding: 0
+          padding: '0 16px',
         }}>
           <Icon
             type={siderCollapsed ? 'menu-unfold' : 'menu-fold'}
@@ -52,9 +56,16 @@ function BasicLayout(props) {
             style={{
               fontSize: '18px',
               lineHeight: '64px',
-              padding: '0 24px',
               cursor: 'pointer',
             }} />
+          <div style={{
+            float: 'right'
+          }}>
+            <Avatar
+              size="large"
+              shape="circle"
+              src={user.avatar_url} />
+          </div>
         </Layout.Header>
         <Layout.Content
           style={{
@@ -76,4 +87,10 @@ function BasicLayout(props) {
   );
 }
 
-export default BasicLayout;
+function mapStateToProps(state) {
+  const { user } = state.user
+  return { user }
+}
+
+
+export default connect(mapStateToProps)(BasicLayout)
