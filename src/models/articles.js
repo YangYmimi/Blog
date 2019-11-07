@@ -13,10 +13,11 @@ export default {
   effects: {
     * fetch(action, { call, put }) {
       const issues = yield call(articleService.issues) // array
+      const vueissues = yield call(articleService.vueissues) // array
       yield put({
         type: 'add',
         payload: {
-          list: issues,
+          list: [...issues, ...vueissues],
           total: issues.length
         }
       })
