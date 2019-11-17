@@ -26,9 +26,9 @@ export default {
       path: '/',
       component: '../layouts/index',
       routes: [
-        { path: '/', component: './articles/index' },
+        { path: '/', component: './index' },
         { path: '/articles', component: './articles/index' },
-        { path: '/aboutme', component: './about/index' }
+        { path: '/about-me', component: './about/index' }
       ]
     }
   ]
