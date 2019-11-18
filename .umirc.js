@@ -1,8 +1,11 @@
 
 // ref: https://umijs.org/config/
 export default {
+  base: '/rblog/',
+  publicPath: '/rblog/',
   treeShaking: true,
   plugins: [
+    'umi-plugin-gh-pages',
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
