@@ -5,7 +5,7 @@
     "build": "umi build",
     "test": "umi test",
     "lint": "eslint --ext .js src mock tests",
-    // "precommit": "lint-staged"
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "antd": "^3.19.5",
