@@ -1,9 +1,12 @@
 
 // ref: https://umijs.org/config/
 export default {
-  // base: '/rblog/',
+  base: '/rblog/',
   // publicPath: '/rblog/',
   treeShaking: true,
+  exportStatic: {
+    htmlSuffix: true, // 启用 .html 后缀
+  },
   plugins: [
     // ref: https://github.com/umijs/umi-plugin-gh-pages
     ['umi-plugin-gh-pages', {
