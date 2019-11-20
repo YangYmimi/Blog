@@ -1,8 +1,8 @@
 
 // ref: https://umijs.org/config/
 export default {
-  base: '/rblog/',
-  publicPath: '/rblog/',
+  base: '/rblog/dist/',
+  publicPath: '/rblog/dist/',
   treeShaking: true,
   plugins: [
     // ref: https://github.com/umijs/umi-plugin-gh-pages
