@@ -1,15 +1,13 @@
 
 // ref: https://umijs.org/config/
 export default {
-  base: '/rblog/',
-  publicPath: '/rblog/',
+  // base: '/rblog/',
+  // publicPath: '/rblog/',
   treeShaking: true,
-  exportStatic: {},
   plugins: [
     // ref: https://github.com/umijs/umi-plugin-gh-pages
     ['umi-plugin-gh-pages', {
-      branch: 'master',
-      dest: 'dist'
+      branch: 'master'
     }],
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
