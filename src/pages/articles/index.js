@@ -1,60 +1,70 @@
+import React, { useState } from 'react'
 import { connect } from 'dva'
-import { List } from 'antd'
-import IconFont from '../../components/IconFont'
-// import Article from './components/Article'
+import HotTags from './components/HotTags'
+import Article from './components/Article'
+import { mapObj } from '../../utils/lodash-helps'
 
 function Articles(props) {
   const { list } = props
+  const [labelTags, setLabelTags] = useState([])
+  const [dateTags, setDateTags] = useState([])
 
-  // Generate
-  const popularTags = (labels) => {
-    return labels.map((label) => {
-      return label.name
-    }).join(', ')
+  const handleTagSelectedChanged = (field, selectedTags = []) => {
+    switch (field) {
+      case 'labels':
+        setLabelTags(selectedTags)
+        break
+      case 'created_at':
+        setDateTags(selectedTags)
+        break
+      default:
+        break
+    }
   }
 
-  const IconText = ({ type, text }) => (
-    <span>
-      <IconFont type={type} style={{ marginRight: 10 }} />
-      {text}
-    </span>
-  );
+  const filter = (tags = [], date = []) => {
+    return list.filter((item) => {
+      const hasTag = tags.length > 0 ? item.labels.some((every) => { // 利用 `Array.prototype.some()` 只要有一个 tags 在就返回 true
+        return tags.includes(every)
+      }) : true
+      const hasDate = date.length > 0 ? date.includes(item.created_at) : true
+      return hasTag && hasDate
+    })
+  }
 
   return (
-    <List
-      itemLayout="vertical"
-      size="large"
-      pagination={{
-        pageSize: 10
-      }}
-      dataSource={list}
-      renderItem={(article) => {
-        return (
-          <List.Item
-            key={article.id}
-            actions={[
-              <IconText type="rblog-user" text={article.user.login} key="list-vertical-user" />,
-              <IconText type="rblog-date" text={article.created_at} key="list-vertical-date" />,
-              <IconText type="rblog-tags" text={popularTags(article.labels)} key="list-vertical-tags" />
-            ]}
-            style={{
-              cursor: "default"
-            }}>
-            <List.Item.Meta title={<a href={article.html_url}>{article.title}</a>} />
-          </List.Item>
-        )
-      }}
-      style={{
-        padding: "10px"
+    <div>
+      <HotTags
+        label="时间线"
+        tags={Array.from(new Set(mapObj(list, 'created_at')))}
+        onTagSelectedChanged={(selectedTags) => handleTagSelectedChanged('created_at', selectedTags)} />
+      <HotTags
+        label="标签"
+        tags={Array.from(new Set(mapObj(list, 'labels').flat(1).sort()))}
+        onTagSelectedChanged={(selectedTags) => handleTagSelectedChanged('labels', selectedTags)} />
+      <div style={{
+        borderTop: "1px solid #d9d9d9",
+        padding: "10px 0",
+        columnCount: 5
       }}>
-    </List>
+        {
+          filter(labelTags, dateTags).map((item) => (
+            <Article
+              key={item.aId}
+              title={item.title}
+              author={item.author}
+              date={item.created_at}
+              labels={item.labels}
+              url={item.url} />
+          ))
+        }
+      </div>
+    </div>
   )
 }
 
 function mapStateToProps(state) {
-  const { list, total } = state.articles
-  return { list, total }
+  return { list: state.articles.list }
 }
-
 
 export default connect(mapStateToProps)(Articles)

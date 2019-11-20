@@ -1,9 +1,11 @@
+import { Descriptions } from 'antd'
+
 function AboutMe() {
   return (
-    <div>
-      AboutMe
-    </div>
-  );
+    <Descriptions title="Superman">
+      <Descriptions.Item label="Live">JiaDing, ShangHai</Descriptions.Item>
+    </Descriptions>
+  )
 }
 
 export default AboutMe

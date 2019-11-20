@@ -5,8 +5,8 @@ export default {
     user: {}
   },
   reducers: {
-    add(state, { payload: data }) {
-      return { ...state, ...data }
+    add(state, user) {
+      return { ...state, ...user }
     }
   },
   effects: {
@@ -14,9 +14,7 @@ export default {
       const user = yield call(userService.user) // array
       yield put({
         type: 'add',
-        payload: {
-          user
-        }
+        user
       })
     }
   },

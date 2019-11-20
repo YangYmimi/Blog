@@ -7,8 +7,6 @@ function BasicLayout(props) {
   // use hooks set a new state variable
   const { user } = props
 
-  console.log(user)
-
   return (
     <Layout style={{
       height: "100%"

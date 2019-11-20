@@ -2,8 +2,7 @@ import * as articleService from '../services/articles'
 
 export default {
   state: {
-    list: [],
-    total: 0
+    list: [] // 文章列表
   },
   reducers: {
     add(state, { payload: data }) {
@@ -12,13 +11,28 @@ export default {
   },
   effects: {
     * fetch(action, { call, put }) {
-      const issues = yield call(articleService.issues) // array
-      const vueissues = yield call(articleService.vueissues) // array
+      const [issues, vueissues] = yield [
+        call(articleService.issues),
+        call(articleService.vueissues)
+      ]
+
+      const articles = [...issues, ...vueissues]
+
       yield put({
         type: 'add',
         payload: {
-          list: [...issues, ...vueissues],
-          total: issues.length
+          list: articles.map((article) => { // 整理数据
+            return {
+              aId: article.id, // 文章编号
+              author: article.user.login, // 作者
+              title: article.title,
+              url: article.html_url, // 文章详情地址
+              labels: article.labels.map((label) => {
+                return label.name
+              }),
+              created_at: `${new Date(article.created_at).getFullYear()}-${new Date(article.created_at).getMonth() + 1}`
+            }
+          })
         }
       })
     }

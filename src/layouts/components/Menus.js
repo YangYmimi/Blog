@@ -18,11 +18,6 @@ function Menus(props) {
           <span>文章列表</span>
         </Link>
       </Col>
-      <Col span={24}>
-        <Link to="/archives">
-          <span>归档列表</span>
-        </Link>
-      </Col>
     </Row>
   )
 }
