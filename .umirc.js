@@ -2,10 +2,12 @@
 // ref: https://umijs.org/config/
 export default {
   base: '/rblog/',
-  // publicPath: '/rblog/',
+  publicPath: '/rblog/',
+  history: 'hash',
   treeShaking: true,
   exportStatic: {
     htmlSuffix: true, // 启用 .html 后缀
+    dynamicRoot: true,
   },
   plugins: [
     // ref: https://github.com/umijs/umi-plugin-gh-pages

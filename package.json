@@ -1,5 +1,6 @@
 {
   "private": true,
+  "homepage": "https://github.com/YangYmimi/rblog",
   "scripts": {
     "start": "umi dev",
     "build": "umi build",
