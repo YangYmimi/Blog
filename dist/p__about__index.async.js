@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[2],{O0dG:function(e,a,n){"use strict";n.r(a);n("bP8k");var t=n("gFTJ"),i=n("q1tI"),r=n.n(i);function c(){return r.a.createElement(t["a"],{title:"Superman"},r.a.createElement(t["a"].Item,{label:"Live"},"JiaDing, ShangHai"))}a["default"]=c}}]);

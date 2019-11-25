@@ -3,12 +3,8 @@
 export default {
   base: '/rblog/',
   publicPath: '/rblog/',
-  history: 'hash',
   treeShaking: true,
-  exportStatic: {
-    htmlSuffix: true, // 启用 .html 后缀
-    dynamicRoot: true,
-  },
+  exportStatic: true,
   plugins: [
     // ref: https://github.com/umijs/umi-plugin-gh-pages
     ['umi-plugin-gh-pages', {
@@ -30,6 +26,17 @@ export default {
           /components\//,
         ],
       },
-    }],
+    }]
+  ],
+  routes: [ // custome routes configuration
+    {
+      path: '/',
+      component: '../layouts/index',
+      routes: [
+        { path: '/', component: './index' },
+        { path: '/articles', component: './articles/index' },
+        { path: '/about-me', component: './about/index' }
+      ]
+    }
   ]
 }
