@@ -31,16 +31,5 @@ export default {
         ],
       },
     }],
-  ],
-  routes: [ // custome routes configuration
-    {
-      path: '/',
-      component: '../layouts/index',
-      routes: [
-        { path: '/', component: './index' },
-        { path: '/articles', component: './articles/index' },
-        { path: '/about-me', component: './about/index' }
-      ]
-    }
   ]
 }
