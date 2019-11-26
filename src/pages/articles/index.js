@@ -33,7 +33,9 @@ function Articles(props) {
   }
 
   return (
-    <div>
+    <div style={{
+      overflowX: "auto"
+    }}>
       <HotTags
         label="时间线"
         tags={Array.from(new Set(mapObj(list, 'created_at')))}
@@ -43,8 +45,9 @@ function Articles(props) {
         tags={Array.from(new Set(mapObj(list, 'labels').flat(1).sort()))}
         onTagSelectedChanged={(selectedTags) => handleTagSelectedChanged('labels', selectedTags)} />
       <div style={{
+        minWidth: "1380px",
         borderTop: "1px solid #d9d9d9",
-        padding: "10px 0",
+        padding: "20px 0",
         columnCount: 5
       }}>
         {

@@ -61,6 +61,7 @@ function BasicLayout(props) {
             <div style={{
               flex: 1,
               overflowY: "auto",
+              overflowX: "hidden",
               width: "100%"
             }}>
               { props.children }
