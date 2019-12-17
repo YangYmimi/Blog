@@ -11,12 +11,13 @@ export default {
   },
   effects: {
     * fetch(action, { call, put }) {
-      const [issues, vueissues] = yield [
+      const [issues, vueissues, koaissues] = yield [
         call(articleService.issues),
-        call(articleService.vueissues)
+        call(articleService.vueissues),
+        call(articleService.koaissues)
       ]
 
-      const articles = [...issues, ...vueissues]
+      const articles = [...issues, ...vueissues, ...koaissues]
 
       yield put({
         type: 'add',

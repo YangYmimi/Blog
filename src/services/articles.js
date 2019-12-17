@@ -7,3 +7,7 @@ export function issues() {
 export function vueissues() {
   return request(`https://api.github.com/repos/yangymimi/read-vue/issues`)
 }
+
+export function koaissues() {
+  return request(`https://api.github.com/repos/yangymimi/koa-start/issues`)
+}
