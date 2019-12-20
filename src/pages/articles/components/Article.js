@@ -8,7 +8,7 @@ function Article(props) {
       width: "256px",
       padding: "10px",
       marginBottom: "20px",
-      background: "rgba(0,0,0,.02)",
+      background: "#FFF",
       breakInside: "avoid",
       boxSizing: "border-box",
       borderRadius: "3px",

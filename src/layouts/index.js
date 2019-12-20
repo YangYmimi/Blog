@@ -56,13 +56,13 @@ function BasicLayout(props) {
           style={{
             display: 'flex',
             padding: '20px',
-            background: '#FFF'
+            backgroundColor: "#F0F2F5"
           }}>
             <div style={{
+              width: "100%",
               flex: 1,
               overflowY: "auto",
-              overflowX: "hidden",
-              width: "100%"
+              overflowX: "hidden"
             }}>
               { props.children }
             </div>
