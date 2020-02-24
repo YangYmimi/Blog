@@ -11,3 +11,7 @@ export function vueissues() {
 export function koaissues() {
   return request(`https://api.github.com/repos/yangymimi/koa-start/issues`)
 }
+
+export function reactissues() {
+  return request(`https://api.github.com/repos/yangymimi/read-react/issues`)
+}

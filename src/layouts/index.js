@@ -48,7 +48,7 @@ function BasicLayout(props) {
             bottom: "20px",
             color: "#FFF",
             fontSize: "16px"
-          }}>© { Date.parse(new Date()) }. All rights reserved.</footer>
+          }}>© { new Date().getFullYear() }. All rights reserved.</footer>
         </Row>
       </Layout.Sider>
       <Layout>
