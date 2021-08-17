@@ -71,8 +71,15 @@ function AboutMe() {
                   dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}
                   color="green"
                 >
-                  <span style={{ marginRight: '10px' }}>2020 - 至今</span>
+                  <span style={{ marginRight: '10px' }}>2020 - 2021</span>
                   <span>Vocust</span>
+                </Timeline.Item>
+                <Timeline.Item
+                  dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}
+                  color="green"
+                >
+                  <span style={{ marginRight: '10px' }}>2021 - 至今</span>
+                  <span>CenturyGame</span>
                 </Timeline.Item>
               </Timeline>
             </div>
