@@ -69,7 +69,7 @@ function AboutMe() {
                 </Timeline.Item>
                 <Timeline.Item
                   dot={<Icon type="clock-circle-o" style={{ fontSize: '16px' }} />}
-                  color="green"
+                  color="red"
                 >
                   <span style={{ marginRight: '10px' }}>2020 - 2021</span>
                   <span>Vocust</span>
