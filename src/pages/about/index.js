@@ -30,7 +30,7 @@ function AboutMe() {
                   }}
                 />
                 <span>
-                  <a href="http://www.vocust.com/home">Vocust</a> - 前端工程师
+                  <a href="https://www.centurygames.com/">CenturyGames</a>
                 </span>
               </p>
               <p>
@@ -40,7 +40,7 @@ function AboutMe() {
                     marginRight: '10px',
                   }}
                 />
-                <span>上海市长宁区</span>
+                <span>上海市徐汇区</span>
               </p>
             </div>
             <Divider />
