@@ -1,7 +1,7 @@
 // ref: https://umijs.org/config/
 export default {
-  base: '/my-blog/dist/',
-  publicPath: '/my-blog/dist/',
+  base: '/superman/dist/',
+  publicPath: '/superman/dist/',
   treeShaking: true,
   exportStatic: true,
   plugins: [
@@ -19,7 +19,7 @@ export default {
         antd: true,
         dva: true,
         dynamicImport: { webpackChunkName: true },
-        title: 'rblog',
+        title: "Superman's Blog",
         dll: false,
         routes: {
           exclude: [
