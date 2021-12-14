@@ -1,26 +1,15 @@
-### Superman's Blog
+# umi project
 
-Use [umi](https://umijs.org/zh/guide/) and [GitHub Developer REST API v3](https://developer.github.com/v3/) to build my blog.
+## Getting Started
 
-### About GitHub Developer API
+Install dependencies,
 
-All API access is over HTTPS, and accessed from https://api.github.com. All data is sent and received as JSON. 
+```bash
+$ yarn
+```
 
-### API List
+Start the dev server,
 
-#### 获取用户信息
-
-`https://api.github.com/users/${your_github_username}`
-
-#### 获取个人所有仓库列表
-
-`https://api.github.com/users/${your_github_username}/repos`
-
-#### 获取指定仓库Issue列表
-
-`https://api.github.com/repos/${your_github_username}/${your_github_reponame}/issues`
-
-#### 获取指定仓库指定Issue
-
-`https://api.github.com/repos/${your_github_username}/${your_github_reponame}/issues/${your_github_issue_id}`
+```bash
+$ yarn start
 ```

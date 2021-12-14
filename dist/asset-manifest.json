@@ -1,0 +1,10 @@
+{
+  "umi.js": "/umi.js",
+  "umi.js.map": "/umi.js.map",
+  "p__home.js": "/p__home.js",
+  "p__home.js.map": "/p__home.js.map",
+  "p__about.js": "/p__about.js",
+  "p__about.js.map": "/p__about.js.map",
+  "p__articles.js": "/p__articles.js",
+  "p__articles.js.map": "/p__articles.js.map"
+}
